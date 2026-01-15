@@ -3,42 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login & Sign Up</title>
     <link rel="stylesheet" href="./public/css/app.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
 </head>
 <body>
 
+<!-- IMAGE & PAGE -->
+<div class="page">
+    
+    <div class="hero-image float-y">
+        <img src="./public/images/face.png" alt="face">
+        <img src="./public/images/bg_todo.jpg" alt="background">
+    </div>
+
     <!-- SIGN UP -->
-    <div class="page_one">
+    <div class="auth float-x" style="display: none;">
+        <h1>Sign Up</h1>
+        <div class="form-box">
+            <div class="form-group">
+                <input type="text" placeholder="Your First Name">
+                <input type="text" placeholder="Your Last Name">
+                <input type="email" placeholder="Choose your Email" id="signupEmail">
 
-    <div class="img_signUP">
-        <img src="./public/images/face.png" alt="">
-        <img src="./public/images/bg_todo.jpg" alt="">
-    </div>
+                <div class="input-eye">
+                    <input type="password" placeholder="Choose your Password" id="signupPassword">
+                    <i id="togglePassword" class="ri-eye-close-line toggleEye"></i>
+                </div>
 
-    <div class="singUP">
-
-        <h1>Sign UP</h1>
-        <div class="div_input">
-        <div class="input">
-            <div>
-            <input type="email" name="Email"  placeholder="Enter your Email" id="email" >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="rgba(255,255,255,1)"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path></svg>
+                <div class="input-eye">
+                    <input type="password" placeholder="Confirm your Password" id="signupConfirm">
+                    <i id="togglePassword" class="ri-eye-close-line toggleEye"></i>
+                </div>
             </div>
-            <div>
-            <input type="text" name="Password" placeholder="Enter your Password" id="password">
-            <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="rgba(255,255,255,1)"><path d="M19 10H20C20.5523 10 21 10.4477 21 11V21C21 21.5523 20.5523 22 20 22H4C3.44772 22 3 21.5523 3 21V11C3 10.4477 3.44772 10 4 10H5V9C5 5.13401 8.13401 2 12 2C15.866 2 19 5.13401 19 9V10ZM5 12V20H19V12H5ZM11 14H13V18H11V14ZM17 10V9C17 6.23858 14.7614 4 12 4C9.23858 4 7 6.23858 7 9V10H17Z"></path></svg>
+
+            <div class="actions">
+                <button id="signupBtn">Sign Up</button>
+                <h3 id="goLogin">Already have an account?</h3>
             </div>
         </div>
-        <button id="signUpBtn" >login</button>
+    </div>
+
+    
+    <!-- LOGIN -->
+    <div class="login float-x">
+        <h1>Login</h1>
+        <div class="container_creeacc">
+            <div class="login_input">
+                <input type="email" placeholder="Enter your Email" id="loginEmail">
+                <div class="input-eye">
+                    <input type="password" placeholder="Enter your Password" id="password">
+                    <i class="ri-eye-close-line" id="togglePassword"></i>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="cree_acc_btn">Login</button>
+                <h3 id="goSignup">Create a new account</h3>
+            </div>
         </div>
-
     </div>
 
-    </div>
+</div>
 
-
-    <script src="./public/js/app.js"></script>
+<script src="./public/js/app.js"></script>
 </body>
+</html>

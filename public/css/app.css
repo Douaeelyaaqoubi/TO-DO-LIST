@@ -1,29 +1,23 @@
-
 body {
     margin: 0;
+    font-family: "Marker Felt", fantasy;
+    color: white;
+    overflow: hidden;
+    
 }
 
-
-.page_one {
+.page {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 2vw;
-    overflow: hidden;
-    height: 100vh;
+    gap: 5vw;
+    min-height: 100vh;
     padding: 0 4vw;
-    /* background: radial-gradient(
-    circle at center,
-    #395c86 0%,
-    #1e4677ca 70%,
-    #093870 100%
-    
-); */
-background-color: #d8d8d8;
-    
+    background-color: #d8d8d8;
+    width: 100vw;
 }
 
-
-.page_one::before {
+.page::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -31,123 +25,243 @@ background-color: #d8d8d8;
     z-index: 1;
 }
 
-
-.page_one > * {
+.page > * {
     position: relative;
     z-index: 2;
 }
 
 
-.img_signUP {
-    background-color: #d8d8d8;
-    /* border-radius: 25px; */
-    animation: jump 1.2s ease-out forwards;
-    }
+/** IMAGE */
 
-
-
-.img_signUP img:last-child {
+.hero-image {
+    position: relative;
     width: 60vw;
+    animation: jump 1.2s ease-out forwards;
+}
+
+.hero-image img:last-child {
+    width: 100%;          
     border-radius: 20px;
     display: block;
 }
 
-
-.img_signUP img:first-child {
+.hero-image img:first-child {
     position: absolute;
-    width: 80%;
-    top: 55%;
+    width: 70%;
+    top: 50%;
     left: 52%;
     transform: translate(-50%, -50%);
-    z-index: 2; 
-    transition: transform 0.2s ease, z-index 0s;
+    transition: transform 0.3s ease;
+    z-index: 3;
+}
+
+.hero-image img:first-child:hover {
+    transform: translate(-50%, -50%) scale(1.3);
 }
 
 
-.img_signUP img:first-child:hover{
-    transform: scale(1.5) translate(-35%, -40%); 
-    z-index: 999;
-    width: 60%;
+
+/** ================= SIGN PAGE ================= */
+
+.float-y {
+    animation: breathe 4s ease-in-out infinite;
 }
 
-.singUP{
-    border-radius: 25px;
-    height: 50vh;
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    gap: 4vh;
-    position: relative; 
-    z-index: 1;
+.float-x {
+    animation: breatheX 4s ease-in-out infinite;
 }
 
+.auth {
+    max-width: 420px;
+    width: 100%;
+}
 
-.div_input{
+.auth h1 {
+    font-size: 2.5rem;
+    margin: 0 0 2vh;
+    font-weight: 400;
+    text-shadow:
+        1px 1px 0 #f6f5f5,
+        2px 2px 0 #cbcaca,
+        3px 3px 0 #b8b8b8;
+}
+
+.form-box {
     background-color: #0359b4a8;
-    padding: 3vw;
+    padding: 2.5vw;
     border-radius: 25px;
     box-shadow:
-    0 8px 15px rgba(72, 71, 71, 0.25),
-    0 20px 40px rgba(0, 0, 0, 0.15);
+        0 8px 15px rgba(72, 71, 71, 0.25),
+        0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.input{
+.form-group {
     display: flex;
     flex-direction: column;
-    gap: 3vh;
-    padding-bottom: 4vh;
+    gap: 2vh;
+    margin-bottom: 3vh;
 }
-.singUP h1{
+
+.form-group input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 6px;
+    color: white;
+}
+
+.form-group input::placeholder {
+    color: #c4e1ffb6;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions button {
+    border: none;
+    border-radius: 25px;
+    background-color: #dd9828c0;
+    padding: 0.7em 2em;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: inherit;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow:
+        0 8px 15px rgba(72, 71, 71, 0.25),
+        0 20px 40px rgba(91, 91, 91, 0.15);
+}
+
+.actions button:hover {
+    background-color: #dd9828ec;
+    transform: scale(1.1);
+}
+
+.actions h3 {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(239, 239, 239, 0.8);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.actions h3:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+
+
+/** ================= LOGIN PAGE ================= */
+
+.login {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 999;
+    width: 50vw;
+    height: auto;
+    border-radius: 25px;
+}
+
+
+.login h1 {
+    padding-bottom: 2vh;
     color: white;
     font-family: Marker Felt, fantasy;
     letter-spacing: 2px;
     font-weight: 400;
     text-shadow:
-    1px 1px 0 #f6f5f5,
-    2px 2px 0 #cbcaca,
-    3px 3px 0 #b8b8b8;
+        1px 1px 0 #f6f5f5,
+        2px 2px 0 #cbcaca,
+        3px 3px 0 #b8b8b8;
     font-size: 3vw;
     margin: 0;
 }
-.input div{
-    display: flex;
-    gap: 5%;
+
+
+.container_creeacc {
+    background-color: #0359b4a8;
+    padding: 2.5vw 3vw;
+    width: 18vw;
+    border-radius: 25px;
+    box-shadow:
+        0 8px 15px rgba(72, 71, 71, 0.25),
+        0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.input input{
+
+.container_creeacc input {
     border: none;
-    border-bottom: rgba(255, 255, 255, 0.586) solid 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.285);
     background-color: transparent;
     width: 100%;
+    padding-bottom: 6px;
+    color: white;
 }
 
-.singUP button{
+.container_creeacc input::placeholder {
+    color: #c4e1ffb6;
+}
+
+.login_input {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+    margin-bottom: 3vh;
+}
+.input-eye {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-eye input {
+    width: 100%;
+    padding-right: 2.5em; 
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    color: white;
+}
+
+.input-eye i {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: white;
+}
+
+
+
+.login_input ~ i{
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: white;
+}
+
+
+.cree_acc_btn {
     border: none;
     border-radius: 25px;
     background-color: #dd9828c0;
-    padding: 3% 2vw;
-    color: rgba(255, 255, 255, 0.778);
+    padding: 0.7em 2em;
+    color: rgba(255, 255, 255, 0.85);
     font-family: Marker Felt, fantasy;
-    box-shadow:
-    0 8px 15px rgba(72, 71, 71, 0.25),
-    0 20px 40px rgba(91, 91, 91, 0.15);
     letter-spacing: 1px;
-    font-weight: 400;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
-.singUP button:hover{
+.cree_acc_btn:hover {
     background-color: #dd9828ec;
-    cursor: pointer;
-    transform: scale(1.2);
-}
-
-.input div svg{
-transition: transform 0.3s ease;
-}
-
-.input div svg:hover{
-    cursor: pointer;
-    transform: scale(1.5);
+    transform: scale(1.15);
 }
 
 
@@ -155,34 +269,69 @@ transition: transform 0.3s ease;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes breathe {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-12px) scale(1.03); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes breatheX {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
 
 @keyframes jump {
-    0% {
-        transform: translateY(200px);
+    from {
+        transform: translateY(50px);
         opacity: 0;
     }
-
-    25% {
-        transform: translateY(-60px);
-        opacity: 1;
-    }
-
-    45% {
-        transform: translateY(30px);
-    }
-
-    65% {
-        transform: translateY(-30px);
-    }
-
-    85% {
-        transform: translateY(10px);
-    }
-
-    100% {
+    to {
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
+@media (max-width: 900px) {
+    .page {
+        flex-direction: column;
+        justify-content: center;
+    }
 
-
+    .hero-image img:last-child {
+        width: 90vw;
+    }
+}
